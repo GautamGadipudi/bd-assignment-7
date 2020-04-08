@@ -2,13 +2,8 @@ import pandas as pd
 import psycopg2
 
 from q5.config.pg import get_connection_config
+from q5.util.queries import get_l1_query
 
-def __get_pg_connection__():
-    params = get_connection_config()
-    pg_connection = psycopg2.connect(**params)
-    if pg_connection is not None:
-        print("Established connection to PG")
-    return pg_connection
 
 def get_pandas_table(sql_query):
     conn = __get_pg_connection__()
@@ -21,19 +16,31 @@ def get_pandas_table(sql_query):
         conn.close()
 
 
-def create_l1_table(tablename='level_1'):
+def create_l1_table():
+    query = get_l1_query()
+    __exec_sql_command__(query)
 
 
+def __get_pg_connection__():
+    params = get_connection_config()
+    pg_connection = psycopg2.connect(**params)
+    if pg_connection is not None:
+        print("Established connection to PG")
+    return pg_connection
 
 
-def exec_SQL_command(sql_query):
+def __exec_sql_command__(sql_query):
     conn = __get_pg_connection__()
     cur = conn.cursor()
     try:
-        print(f'Executing query {sql_query}\n...')
+        print(f'Executing query:\n {sql_query}\n...')
         cur.execute(sql_query)
-    except Exception as e:
+        conn.commit()
+        print('Query executed successfully!')
+    except (Exception, psycopg2.DatabaseError) as e:
+        print('Failed to execute query.')
         print(e)
+        conn.rollback()
     finally:
         cur.close()
         conn.close()

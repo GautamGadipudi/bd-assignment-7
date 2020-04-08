@@ -1,0 +1,3 @@
+L1_TABLE_NAME = 'level_1'
+
+MINIMUM_SUPPORT = 5

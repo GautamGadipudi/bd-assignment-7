@@ -1,4 +1,3 @@
-from q5.pg.operations import get_pandas_table
+from q5.pg.operations import create_l1_table
 
-x = get_pandas_table('SELECT * FROM L3')
-print(x)
+create_l1_table()
