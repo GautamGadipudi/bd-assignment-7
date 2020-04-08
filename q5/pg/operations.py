@@ -35,7 +35,11 @@ def __exec_sql_command__(sql_query):
     try:
         print(f'Executing query:\n {sql_query}\n...')
         cur.execute(sql_query)
+        x = ()
+        if cur.rowcount > 0:
+            x = cur.fetchall()
         conn.commit()
+        print(str(x[0][0]) + ' rows affected.')
         print('Query executed successfully!')
     except (Exception, psycopg2.DatabaseError) as e:
         print('Failed to execute query.')
