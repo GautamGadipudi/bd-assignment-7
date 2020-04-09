@@ -24,3 +24,9 @@ Run the following in the root of the repo after connecting to your postgreSQL se
 ```bash
 \i 'q4/q4.sql'
 ```
+
+## Question 5
+Run the following in the root of the repo after connecting to your postgreSQL server through PSQL
+```bash
+python3 q5/main.py
+```
