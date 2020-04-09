@@ -1,4 +1,4 @@
-from q5.util.constants import *
+from util.constants import *
 
 
 def get_l1_query(table_name=L1_TABLE_NAME, min_support=DEFAULT_MINIMUM_SUPPORT):

@@ -1,7 +1,7 @@
 import psycopg2
 
-from q5.util.queries import get_l1_query, get_ln_query, get_rows_in_ln_query
-from q5.util.config import get_connection_config
+from util.queries import get_l1_query, get_ln_query, get_rows_in_ln_query
+from util.config import get_connection_config
 
 
 def create_l1_table():

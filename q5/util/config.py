@@ -1,6 +1,6 @@
 from configparser import ConfigParser
 
-from q5.util.constants import PG_CONNECTION_CONFIG_FILE_PATH, PG_CONNECTION_CONFIG_SECTION
+from util.constants import PG_CONNECTION_CONFIG_FILE_PATH, PG_CONNECTION_CONFIG_SECTION
 
 
 def get_connection_config(filename=PG_CONNECTION_CONFIG_FILE_PATH, section=PG_CONNECTION_CONFIG_SECTION):
