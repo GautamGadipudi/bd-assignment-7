@@ -39,3 +39,16 @@ Assuming the table `popular_movie_actors` exists.
 ```bash
 python3 main.py
 ```
+The frequent item sets in each level are as follows:
+
+|Level|Frequent itemsets|
+|---|---|
+|1|17055|
+|2|2462|
+|3|276|
+|4|71|
+|5|27|
+|6|5|
+|7|0|
+
+Find the actor names in the table named `final_level`.

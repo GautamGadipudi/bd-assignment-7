@@ -5,7 +5,7 @@
 
 import psycopg2
 
-from util.queries import get_l1_query, get_ln_query, get_rows_in_ln_query
+from util.queries import get_l1_query, get_ln_query, get_rows_in_ln_query, get_final_query
 from util.config import get_connection_config
 
 
@@ -16,6 +16,10 @@ def create_l1_table():
 
 def create_ln_table(n):
     query = get_ln_query(n)
+    __exec_sql_command__(query)
+
+def create_final_table(n):
+    query = get_final_query(n)
     __exec_sql_command__(query)
 
 

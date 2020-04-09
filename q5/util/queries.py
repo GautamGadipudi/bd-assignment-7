@@ -81,3 +81,28 @@ def get_ln_query(n, min_support=DEFAULT_MINIMUM_SUPPORT):
 
 def get_rows_in_ln_query(n):
     return f'SELECT COUNT(*) FROM level_{n};'
+
+
+def get_final_query(n):
+    table_name = f'level_{n}'
+    new_table_name = 'final_level'
+    drop_statement = f'DROP TABLE IF EXISTS {new_table_name};\n'
+    select_statement = 'SELECT \n'
+    for i in range(n):
+        select_statement += f'm{i}.name AS actor{i},\n'
+    select_statement += ' count'
+
+    join_statement = ''
+    for i in range(n):
+        join_statement += f''' INNER JOIN member m{i} ON m{i}.id=actor{i} '''
+
+    result = f'''
+        {drop_statement}
+        {select_statement}
+        INTO TABLE {new_table_name}
+        FROM
+        {table_name}
+        {join_statement}
+    '''
+
+    return result
