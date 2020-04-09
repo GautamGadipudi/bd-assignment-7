@@ -1,3 +1,8 @@
+'''
+    Author: Gautam Gadipudi
+    RIT Id: gg7148
+'''
+
 # Database constants
 L1_TABLE_NAME = 'level_1'
 MAIN_TABLE = 'popular_movie_actors'

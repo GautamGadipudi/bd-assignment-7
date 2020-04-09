@@ -1,3 +1,8 @@
+'''
+    Author: Gautam Gadipudi
+    RIT Id: gg7148
+'''
+
 from configparser import ConfigParser
 
 from util.constants import PG_CONNECTION_CONFIG_FILE_PATH, PG_CONNECTION_CONFIG_SECTION

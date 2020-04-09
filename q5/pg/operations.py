@@ -1,3 +1,8 @@
+'''
+    Author: Gautam Gadipudi
+    RIT Id: gg7148
+'''
+
 import psycopg2
 
 from util.queries import get_l1_query, get_ln_query, get_rows_in_ln_query

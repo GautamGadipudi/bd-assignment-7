@@ -1,3 +1,8 @@
+/*
+    Author: Gautam Gadipudi
+    RIT Id: gg7148@rit.edu
+*/
+
 DROP TABLE IF EXISTS popular_movie_actors;
 
 CREATE TABLE IF NOT EXISTS popular_movie_actors(

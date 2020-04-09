@@ -1,3 +1,8 @@
+/*
+    Author: Gautam Gadipudi
+    RIT Id: gg7148@rit.edu
+*/
+
 DROP TABLE IF EXISTS L2;
 
 CREATE TABLE IF NOT EXISTS L2(
